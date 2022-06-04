@@ -4,3 +4,11 @@ Got the rates by credit score from:
 https://www.nerdwallet.com/article/loans/auto-loans/average-car-loan-interest-rates-by-credit-score
 
 *rates accurate as of 5/29/22
+
+The selections from the list are:
+
+1st: Read in data from a  local csv.
+2nd: Use pandas to clean data
+3rd: 5 basic calculations with python
+4th: so far: 2 graphs
+5th: readme
