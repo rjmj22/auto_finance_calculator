@@ -1,5 +1,4 @@
-# Importing file data.csv
-# Make sure to update the path as needed
+
 
 from calendar import month
 
@@ -11,7 +10,10 @@ import matplotlib.pyplot as plt
 
 import seaborn as sns
 
+# Importing file data.csv
+# Make sure to update the path below as needed
 df = pd.read_csv('D:\\coding\project\data.csv')
+# Make sure to update the path above as needed
 
 df = df.dropna()
 
