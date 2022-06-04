@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 import seaborn as sns
 
-df = pd.read_csv('D:\\code\data.csv')
+df = pd.read_csv('D:\\coding\project\data.csv')
 
 df = df.dropna()
 
