@@ -12,3 +12,5 @@ The selections from the list are:
 3rd: 5 basic calculations with python
 4th: so far: 2 graphs
 5th: readme
+
+run file: "car_finance_calculator.py"
