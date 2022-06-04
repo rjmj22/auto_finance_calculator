@@ -1,0 +1,8 @@
+pip install pandas
+pip install matplotlib
+pip install numpy
+pip install seaborn
+
+Need to also download data.csv
+
+Will need to change: "df = pd.read_csv('D:\\code\data.csv')" to the directory that data.csv is put into
