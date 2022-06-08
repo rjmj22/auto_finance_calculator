@@ -1,10 +1,10 @@
 
 
-from calendar import month
+from calendar import month # Unused import
 
 import pandas as pd
 
-import numpy as np
+import numpy as np # Unused import
 
 import matplotlib.pyplot as plt
 
@@ -12,7 +12,7 @@ import seaborn as sns
 
 # Importing file data.csv
 # Make sure to update the path below as needed
-df = pd.read_csv('D:\\coding\project\data.csv')
+df = pd.read_csv('D:\\coding\project\data.csv') # Could be relative path
 # Make sure to update the path above as needed
 
 df = df.dropna()
@@ -33,7 +33,7 @@ deep_subprime = df.loc[9, :].values.tolist()
 
 def main():
     print("This is a Auto loan finance calculator. Please enter whole numbers only, no commas needed!")
-    
+    # Whitespace
     # new or used, trade in, down payment, credit score and overall car values:
 
     while True:
@@ -46,7 +46,7 @@ def main():
             print('1 or 2 only:')
             continue
         else:
-            break
+            break # Other errors
 
     
     while True:
@@ -92,7 +92,7 @@ def main():
             break
 
 # matching credit score to rate
-
+    # Check condition first
     if credit_score >= 781 and condition == 1:
         rate = superprime[2]
     elif credit_score >= 661 and condition == 1:
