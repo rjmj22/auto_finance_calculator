@@ -5,6 +5,11 @@ https://www.nerdwallet.com/article/loans/auto-loans/average-car-loan-interest-ra
 
 *rates accurate as of 5/29/22
 
+The install requirements are in the requirements.txt
+Need to also download data.csv
+
+Will need to change: line 15 "df = pd.read_csv('D:\\code\data.csv')" to the directory that data.csv is put into
+
 The selections from the list are:
 
 1st: Read in data from a  local csv.
