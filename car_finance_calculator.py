@@ -22,12 +22,8 @@ nonprime = df.loc[5, :].values.tolist()
 subprime = df.loc[7, :].values.tolist()
 
 deep_subprime = df.loc[9, :].values.tolist()
-
-
-
 def main():
     print("This is a Auto loan finance calculator. Please enter whole numbers only, no commas needed!")
-    
     # new or used, trade in, down payment, credit score and overall car values:
 
     while True:
@@ -42,7 +38,6 @@ def main():
         else:
             break
 
-    
     while True:
         try:
             trade_in = float(input("If you have a trade in enter value, if not put 0: "))
@@ -51,7 +46,6 @@ def main():
             continue
         else:
             break
-    
     
     while True:
         try:
@@ -62,7 +56,6 @@ def main():
         else:
             break
             
-    
     while True:
         try:
             credit_score = float(input("Enter credit score number between 300-850: "))
@@ -75,7 +68,6 @@ def main():
         else:
             break
     
-    
     while True:
         try:
             auto_price = float(input("Enter the total price of the vehicle: "))
@@ -86,27 +78,30 @@ def main():
             break
 
 # matching credit score to rate
-
-    if credit_score >= 781 and condition == 1:
-        rate = superprime[2]
-    elif credit_score >= 661 and condition == 1:
-        rate = prime[2]
-    elif credit_score >= 601 and condition == 1:
-        rate = nonprime[2]
-    elif credit_score >= 501 and condition == 1:
-        rate = subprime[2]
-    elif credit_score <= 500 and condition == 1:
-        rate = deep_subprime[2]
-    elif credit_score >= 781 and condition == 2:
-        rate = superprime[3]
-    elif credit_score >= 661 and condition == 2:
-        rate = prime[3]
-    elif credit_score >= 601 and condition == 2:
-        rate = nonprime[3]
-    elif credit_score >= 501 and condition == 2:
-        rate = subprime[3]
-    elif credit_score <= 500 and condition == 2:
-        rate = deep_subprime[3]
+# new condition
+    if condition == 1:
+        if credit_score >= 781:
+            rate = superprime[2]
+        elif credit_score >= 661:
+            rate = prime[2]
+        elif credit_score >= 601:
+            rate = nonprime[2]
+        elif credit_score >= 501:
+            rate = subprime[2]
+        elif credit_score <= 500:
+            rate = deep_subprime[2]
+# used condition
+    if condition == 2:
+        if credit_score >= 781:
+            rate = superprime[3]
+        elif credit_score >= 661:
+            rate = prime[3]
+        elif credit_score >= 601:
+            rate = nonprime[3]
+        elif credit_score >= 501:
+            rate = subprime[3]
+        elif credit_score <= 500:
+            rate = deep_subprime[3]
 
 # figuring our principal and interest rate by year
   
@@ -126,9 +121,8 @@ def main():
     six_year = int((principal + int6) / 72)
     seven_year = int((principal + int7) / 84)
 
-
 # Making plot data
-
+# Plot 1 data
     plt.figure(1)
     plot_data1 = {"Months": ["36", "48", "60", "72", "84"],
                  "Amounts": [three_year, four_year, five_year, six_year, seven_year]}
@@ -142,7 +136,7 @@ def main():
                  textcoords='offset points')
     plt.xlabel("Months", size=15)
     plt.ylabel("Monthly payment", size=15)
-
+# Plot 2 data
     plt.figure(2)
     plot_data2 = {"Months": ["36", "48", "60", "72", "84"],
                  "Amounts": [int3, int4, int5, int6, int7]}
@@ -156,9 +150,6 @@ def main():
                  textcoords='offset points')
     plt.xlabel("Months", size=15)
     plt.ylabel("Interest paid", size=15)
-    
     plt.show()
-
-
 
 main()
