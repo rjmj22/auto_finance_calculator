@@ -1,3 +1,4 @@
+from turtle import rt
 import pandas as pd
 
 import matplotlib.pyplot as plt
@@ -6,7 +7,7 @@ import seaborn as sns
 
 # Importing file data.csv
 # Make sure to update the path below as needed
-df = pd.read_csv('D:\\coding\project\data.csv')
+df = pd.read_csv('c:\code\project\data.csv')
 # Make sure to update the path above as needed
 
 df = df.dropna()
@@ -22,6 +23,22 @@ nonprime = df.loc[5, :].values.tolist()
 subprime = df.loc[7, :].values.tolist()
 
 deep_subprime = df.loc[9, :].values.tolist()
+
+def get_rate(credit_score, condition):
+    if condition == 1:
+        if credit_score >= 781:
+            rate = superprime[2]
+        elif credit_score >= 661:
+            rate = prime[2]
+        elif credit_score >= 601:
+            rate = nonprime[2]
+        elif credit_score >= 501:
+            rate = subprime[2]
+        elif credit_score <= 500:
+            rate = deep_subprime[2]
+    return rate
+
+
 def main():
     print("This is a Auto loan finance calculator. Please enter whole numbers only, no commas needed!")
     # new or used, trade in, down payment, credit score and overall car values:
@@ -79,32 +96,33 @@ def main():
 
 # matching credit score to rate
 # new condition
-    if condition == 1:
-        if credit_score >= 781:
-            rate = superprime[2]
-        elif credit_score >= 661:
-            rate = prime[2]
-        elif credit_score >= 601:
-            rate = nonprime[2]
-        elif credit_score >= 501:
-            rate = subprime[2]
-        elif credit_score <= 500:
-            rate = deep_subprime[2]
+    
+    # if condition == 1:
+    #     if credit_score >= 781:
+    #         rate = superprime[2]
+    #     elif credit_score >= 661:
+    #         rate = prime[2]
+    #     elif credit_score >= 601:
+    #         rate = nonprime[2]
+    #     elif credit_score >= 501:
+    #         rate = subprime[2]
+    #     elif credit_score <= 500:
+    #         rate = deep_subprime[2]
 # used condition
-    if condition == 2:
-        if credit_score >= 781:
-            rate = superprime[3]
-        elif credit_score >= 661:
-            rate = prime[3]
-        elif credit_score >= 601:
-            rate = nonprime[3]
-        elif credit_score >= 501:
-            rate = subprime[3]
-        elif credit_score <= 500:
-            rate = deep_subprime[3]
+    # if condition == 2:
+    #     if credit_score >= 781:
+    #         rate = superprime[3]
+    #     elif credit_score >= 661:
+    #         rate = prime[3]
+    #     elif credit_score >= 601:
+    #         rate = nonprime[3]
+    #     elif credit_score >= 501:
+    #         rate = subprime[3]
+    #     elif credit_score <= 500:
+    #         rate = deep_subprime[3]
 
 # figuring our principal and interest rate by year
-  
+    get_rate(credit_score, condition)
     principal = (auto_price - (down_payment + trade_in))
     
     int3 = (principal * rate * 3)
