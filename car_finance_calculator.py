@@ -5,14 +5,23 @@ import seaborn as sns
 # Make sure to update the path below as needed
 df = pd.read_csv('d:/coding/project/data.csv')
 # Make sure to update the path above as needed
+
+# getting rid of "NaN"
 df = df.dropna()
 # Getting csv data to lists
+
 superprime = df.loc[1, :].values.tolist()
+
 prime = df.loc[3, :].values.tolist()
+
 nonprime = df.loc[5, :].values.tolist()
+
 subprime = df.loc[7, :].values.tolist()
+
 deep_subprime = df.loc[9, :].values.tolist()
+
 # function to get rates from credit score and condition
+
 def get_rate(credit_score, condition):
     if condition == 1:
         if credit_score >= 781:
@@ -37,6 +46,7 @@ def get_rate(credit_score, condition):
         elif credit_score <= 500:
             rate = deep_subprime[3]
     return rate
+
 def get_int(principal, rate):
     int3 = (principal * rate * 3)
     int4 = (principal * rate * 4)
@@ -45,6 +55,7 @@ def get_int(principal, rate):
     int7 = (principal * rate * 7)
     int_rates = (int3, int4, int5, int6, int7)
     return int_rates
+
 def get_years(principal, int_rates):
     three_year = int((principal + int_rates[0]) / 36)
     four_year = int((principal + int_rates[1]) / 48)
@@ -53,6 +64,7 @@ def get_years(principal, int_rates):
     seven_year = int((principal + int_rates[4]) / 84)
     loan_years = (three_year, four_year, five_year, six_year, seven_year)
     return loan_years
+
 def main():
     print("This is a Auto loan finance calculator. Please enter whole numbers only, no commas needed!")
     # new or used, trade in, down payment, credit score and overall car values:
@@ -102,17 +114,22 @@ def main():
             continue
         else:
             break
+
 # matching credit score to rate
     get_rate(credit_score, condition)
     rate = get_rate(credit_score, condition)
+
 # figuring our principal and interest rate by year
     principal = (auto_price - (down_payment + trade_in))
     get_int(principal, rate)
     int_rates = get_int(principal, rate)
+
 # getting monthly payments calculations
     get_years(principal, int_rates)
     loan_years = get_years(principal, int_rates)
+
 # Making plot data
+
 # Plot 1 data
     plt.figure(1)
     plot_data1 = {"Months": ["36", "48", "60", "72", "84"],
@@ -126,6 +143,7 @@ def main():
                  textcoords='offset points')
     plt.xlabel("Months", size=15)
     plt.ylabel("Monthly payment", size=15)
+
 # Plot 2 data
     plt.figure(2)
     plot_data2 = {"Months": ["36", "48", "60", "72", "84"],
@@ -140,4 +158,5 @@ def main():
     plt.xlabel("Months", size=15)
     plt.ylabel("Interest paid", size=15)
     plt.show()
+
 main()
