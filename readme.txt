@@ -8,7 +8,7 @@ https://www.nerdwallet.com/article/loans/auto-loans/average-car-loan-interest-ra
 The install requirements are in the requirements.txt
 Need to also download data.sqlite3
 
-Will need to change: line 6 "df = pd.read_csv('D:/coding/project/data.sqlite3')" to the directory that data.sqlite3 is put into
+Will need to change: line 6 "df = pd.read_sql_table('D:/coding/project/data.sqlite3')" to the directory that data.sqlite3 is put into
 
 The selections from the list are:
 
