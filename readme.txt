@@ -6,13 +6,13 @@ https://www.nerdwallet.com/article/loans/auto-loans/average-car-loan-interest-ra
 *rates accurate as of 5/29/22
 
 The install requirements are in the requirements.txt
-Need to also download data.csv
+Need to also download data.sqlite3
 
-Will need to change: line 6 "df = pd.read_csv('D:/coding/project/data.csv')" to the directory that data.csv is put into
+Will need to change: line 6 "df = pd.read_csv('D:/coding/project/data.sqlite3')" to the directory that data.sqlite3 is put into
 
 The selections from the list are:
 
-1st: Read in data from a  local csv.
+1st: Read in data from a database.
 2nd: Use pandas to clean data
 3rd: 5 basic calculations with python And custom functions
 4th: 2 graphs

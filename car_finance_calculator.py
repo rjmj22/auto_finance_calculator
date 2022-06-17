@@ -1,10 +1,11 @@
 import pandas as pd
+from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 import seaborn as sns
-# Importing file data.csv
 # Make sure to update the path below as needed
-df = pd.read_csv('d:/coding/project/data.csv')
+engine = create_engine('sqlite:///D:\\coding\\test\\data.sqlite3')
 # Make sure to update the path above as needed
+df = pd.read_sql_table('credit', engine)
 
 # getting rid of "NaN"
 df = df.dropna()
