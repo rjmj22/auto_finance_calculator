@@ -12,7 +12,7 @@ Will need to change: line 6 "df = pd.read_sql_table('D:/coding/project/data.sqli
 
 The selections from the list are:
 
-1st: Read in data from a database.
+1st: Read in data from a database. * Was using CSV prior.
 2nd: Use pandas to clean data
 3rd: 5 basic calculations with python And custom functions
 4th: 2 graphs
